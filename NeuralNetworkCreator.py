@@ -373,9 +373,11 @@ class NeuralNetworkGUI(QMainWindow):
         epochs = int(self.epochs.text())
         batch_size = int(self.batch_size.text())
 
+        if self.clear_model_checkbox.isChecked():
+            self.create_model()
+
         if self.use_gpu_checkbox.isChecked():
             with tf.device('/GPU:0'):
-                self.create_model()
                 self.compile_and_train_model(epochs, batch_size)
         else:
             with tf.device('/CPU:0'):
