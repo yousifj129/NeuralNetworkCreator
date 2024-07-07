@@ -1,11 +1,10 @@
 # AIcreator
  Create Sequential Neural Networks Using a GUI program
 
-Certainly! Here's a README file that explains the program, how to use it, and how to contribute:
-
 # Neural Network GUI
 
 This Neural Network GUI is a Python application that provides a graphical interface for creating, training, and analyzing neural networks using TensorFlow and Keras. It offers a user-friendly way to experiment with different network architectures and parameters without writing code.
+
 
 ## Features
 
@@ -18,20 +17,14 @@ This Neural Network GUI is a Python application that provides a graphical interf
 - Save and load trained models
 - GPU support (if available)
 
-## Requirements
-
-- Python 3.7+
-- PySide6
-- TensorFlow 2.x
-- Pandas
-- NumPy
+## note
+this program only works with 1D datasets
 
 ## Installation
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/neural-network-gui.git
-   cd neural-network-gui
+   git clone https://github.com/yousifj129/NeuralNetworkCreator.git
    ```
 
 2. Install the required dependencies:
