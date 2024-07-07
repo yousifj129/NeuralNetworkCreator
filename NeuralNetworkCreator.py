@@ -216,14 +216,16 @@ class NeuralNetworkGUI(QMainWindow):
 
         # Layer Configuration
         self.layer_type = QComboBox()
-        self.layer_type.addItems(["Dense", "Conv1D", "LSTM", "Dropout"])
+        self.layer_type.addItems(["Dense","Dropout"])
         self.layer_param = QLineEdit()
         left_layout.addWidget(QLabel("Layer Type:"))
         left_layout.addWidget(self.layer_type)
         left_layout.addWidget(QLabel("Layer Parameters:"))
         left_layout.addWidget(self.layer_param)
         self.activation = QComboBox()
-        self.activation.addItems(["relu", "sigmoid", "softmax", "tanh", "linear"])
+        self.activation.addItems(["relu", "sigmoid", "softmax", "tanh", "linear", 
+                                  "softplus","softsign","selu","elu","exponential","leaky_relu",
+                                  "relu6","silu","hard_silu","gelu","hard_sigmoid","mish","log_softmax"])
         left_layout.addWidget(QLabel("Activation Function:"))
         left_layout.addWidget(self.activation)
         add_layer_btn = QPushButton("Add Layer")
@@ -246,9 +248,12 @@ class NeuralNetworkGUI(QMainWindow):
 
         # Optimizer and Loss Function
         self.optimizer = QComboBox()
-        self.optimizer.addItems(["adam", "sgd", "rmsprop", "adagrad"])
+        self.optimizer.addItems(["adam", "sgd", "rmsprop", "adagrad","adamw","adadelta","adamax","adafactor","nadam","ftrl","lion"])
         self.loss_function = QComboBox()
-        self.loss_function.addItems(["mean_squared_error", "mean_absolute_error", "categorical_crossentropy", "binary_crossentropy"])
+        self.loss_function.addItems(["mean_squared_error", "mean_absolute_error", "categorical_crossentropy","binary_crossentropy"
+                                        ,"mean_absolute_percentage_error","mean_squared_logarithmic_error"
+                                      , "cosine_similarity","huber","log_cosh","hinge"
+                                      ,"categorical_hinge","squared_hinge","kl_divergence","poisson","sparse_categorical_crossentropy"])
 
         left_layout.addWidget(QLabel("Optimizer:"))
         left_layout.addWidget(self.optimizer)

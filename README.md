@@ -1,10 +1,5 @@
-# AIcreator
+# Neural Network Creator
  Create Sequential Neural Networks Using a GUI program
-
-# Neural Network GUI
-
-This Neural Network GUI is a Python application that provides a graphical interface for creating, training, and analyzing neural networks using TensorFlow and Keras. It offers a user-friendly way to experiment with different network architectures and parameters without writing code.
-
 
 ## Features
 
