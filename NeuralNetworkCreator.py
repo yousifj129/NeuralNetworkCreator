@@ -201,6 +201,10 @@ class NeuralNetworkGUI(QMainWindow):
         self.use_gpu_checkbox.setChecked(self.check_gpu_availability())
         left_layout.addWidget(self.use_gpu_checkbox)
 
+        self.clear_model_checkbox = QCheckBox("Clear model before training")
+        self.clear_model_checkbox.setChecked(True)
+        left_layout.addWidget(self.clear_model_checkbox)
+
         # Data Loading
         load_data_btn = QPushButton("Load CSV Data")
         load_data_btn.clicked.connect(self.load_data)
