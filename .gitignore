@@ -1,0 +1,5 @@
+/dist
+/build
+*.h5
+*.csv
+*.spec
