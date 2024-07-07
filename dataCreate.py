@@ -15,7 +15,7 @@ def write_sine_function_to_csv(filename, start, end, step):
 # Example usage
 filename = 'sine_function.csv'
 start = 0
-end = 2 * math.pi
+end = 10 * math.pi
 step = 0.1
 
 write_sine_function_to_csv(filename, start, end, step)

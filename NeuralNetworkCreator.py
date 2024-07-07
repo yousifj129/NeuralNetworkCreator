@@ -381,10 +381,11 @@ class NeuralNetworkGUI(QMainWindow):
 
         x_train = self.data.iloc[:, :-1].values
         y_train = self.data.iloc[:, -1].values
-
         class LossHistory(keras.callbacks.Callback):
             def on_epoch_end(self, epoch, logs={}):
                 self.parent.loss_display.append(f"Epoch {epoch+1}/{epochs} - loss: {logs.get('loss'):.4f} - mae: {logs.get('mae'):.4f}")
+                if not self.parent.analyze_window.isHidden():
+                    self.parent.analyze_window.update_visualization()
                 QApplication.processEvents()  # Update GUI
 
         history = LossHistory()
