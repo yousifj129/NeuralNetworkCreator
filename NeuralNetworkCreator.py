@@ -201,7 +201,7 @@ class NeuralNetworkGUI(QMainWindow):
         self.use_gpu_checkbox.setChecked(self.check_gpu_availability())
         left_layout.addWidget(self.use_gpu_checkbox)
 
-        self.clear_model_checkbox = QCheckBox("Clear model before training")
+        self.clear_model_checkbox = QCheckBox("New model on train (clear old model)")
         self.clear_model_checkbox.setChecked(True)
         left_layout.addWidget(self.clear_model_checkbox)
 
@@ -381,14 +381,13 @@ class NeuralNetworkGUI(QMainWindow):
                 self.compile_and_train_model(epochs, batch_size)
         else:
             with tf.device('/CPU:0'):
-                self.create_model()
                 self.compile_and_train_model(epochs, batch_size)
 
     def compile_and_train_model(self, epochs, batch_size):
         optimizer = self.optimizer.currentText()
         loss = self.loss_function.currentText()
-
-        self.model.compile(optimizer=optimizer, loss=loss, metrics=['mae'])
+        if self.clear_model_checkbox.isChecked():
+            self.model.compile(optimizer=optimizer, loss=loss, metrics=['mae'])
 
         x_train = self.data.iloc[:, :-1].values
         y_train = self.data.iloc[:, -1].values
