@@ -3,3 +3,4 @@
 *.h5
 *.csv
 *.spec
+__pycache__
