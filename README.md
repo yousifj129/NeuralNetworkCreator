@@ -60,10 +60,6 @@ Contributions to improve the Neural Network GUI are welcome!
 - Improve error handling and user feedback
 - Add unit tests and documentation
 
-## License
-
-This project is licensed under the GNU License. See the LICENSE file for details.
-
 ## Acknowledgments
 
 This GUI application uses TensorFlow, Keras, and PySide6.
